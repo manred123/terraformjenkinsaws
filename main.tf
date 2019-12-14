@@ -16,12 +16,12 @@ provider "aws" {
 resource "aws_instance" "default" {
   ami                    = "${var.ami}"
   count                  = "${var.count}"
-  key_name               = "terraform"
+  # key_name               = "terraform"
   vpc_security_group_ids = ["${aws_security_group.default.id}"]
   source_dest_check      = false
   instance_type          = "${var.instance_type}"
   user_data              = <<-EOF
-                           #!/bin/bash
+                            #!/bin/bash
                            yum install httpd -y
                            echo "Welcome to Apache Server" > /var/www/html/index.html
                            yum update -y
