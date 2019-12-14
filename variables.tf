@@ -1,0 +1,20 @@
+variable "count" {
+  default = 1
+}
+
+variable "key_name" {
+  description = "Private key name to use with instance"
+  default     = "terraform"
+}
+
+variable "instance_type" {
+  description = "AWS instance type"
+  default     = "t2.small"
+}
+
+variable "ami" {
+  description = "Base AMI to launch the instances"
+
+  # Bitnami NGINX AMI
+  default = "ami-03587fa4048e9eb92"
+}
